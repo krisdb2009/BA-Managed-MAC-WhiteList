@@ -35,7 +35,7 @@ namespace BA_Managed_MAC_WhiteList.ManageDevices
                 editBtnCell.Controls.Add(editBtn);
                 device.Cells.Add(editBtnCell);
                 device.Cells.Add(new TableCell() { Text =  mac});
-                device.Cells.Add(new TableCell() { Text = child.Properties["description"].Value.ToString() });
+                device.Cells.Add(new TableCell() { Text = child.Properties["description"].Value?.ToString() });
                 tblDevices.Rows.Add(device);
             }
         }

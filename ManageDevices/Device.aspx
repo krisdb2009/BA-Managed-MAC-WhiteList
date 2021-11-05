@@ -10,11 +10,11 @@
         </h3>
     </div>
 
-    <a class="btn btn-default" href="../" role="button" style="margin-right:20px;">
+    <a class="btn btn-default" href="../" role="button">
         <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Back
     </a>
 
-    <div class="btn-group" role="group">
+    <div class="btn-group" style="float:right;" role="group">
         <button type="button" class="btn btn-danger">
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete
         </button>
@@ -35,7 +35,7 @@
 
     <div class="form-group">
         <label for="MainContent_inputVLAN">VLAN</label>
-        <asp:DropDownList ID="inputVLAN" CssClass="form-control" runat="server"></asp:DropDownList>
+        <asp:DropDownList OnSelectedIndexChanged="inputVLAN_SelectedIndexChanged" ID="inputVLAN" CssClass="form-control" runat="server"></asp:DropDownList>
     </div>
 
     <button type="submit" class="btn btn-default">

@@ -5,6 +5,12 @@
         <h3>Devices</h3>
     </div>
 
+    <a class="btn btn-default" href="./New" role="button">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+    </a>
+
+    <hr />
+
     <asp:Table CssClass="table" ID="tblDevices" runat="server"></asp:Table>
 
 </asp:Content>
