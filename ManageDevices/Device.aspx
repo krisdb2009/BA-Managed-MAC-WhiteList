@@ -10,20 +10,25 @@
         </h3>
     </div>
 
+    <% if (Request.QueryString.ToString() == "delete") { %>
+        <div class="alert alert-warning" style="display:flex;align-items:center;" role="alert">
+            <span style="flex:1;">
+                <strong>Warning!</strong> Are you sure you want to delete this device?
+            </span>
+            <a style="" href="?delete_confirm" class="btn btn-danger">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Confirm
+            </a>
+        </div>
+    <% } %>
+
     <a class="btn btn-default" href="../" role="button">
         <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Back
     </a>
 
     <div class="btn-group" style="float:right;" role="group">
-        <button type="button" class="btn btn-danger">
+        <a href="?delete" class="btn btn-danger">
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete
-        </button>
-        <button type="button" class="btn btn-warning">
-            <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Disable
-        </button>
-        <button type="button" class="btn btn-success">
-            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Enable
-        </button>
+        </a>
     </div>
 
     <hr />

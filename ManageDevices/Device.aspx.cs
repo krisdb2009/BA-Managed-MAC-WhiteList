@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
 using System.DirectoryServices;
-using System.DirectoryServices.AccountManagement;
 
 namespace BA_Managed_MAC_WhiteList.ManageDevices
 {
@@ -24,6 +19,15 @@ namespace BA_Managed_MAC_WhiteList.ManageDevices
             }
             lblSelectedDevice.Text = mac;
             ADDevice = new DirectoryEntry("LDAP://CN=" + mac + ",OU=Wifi Devices,OU=BA_Users,DC=ad,DC=belowaverage,DC=org");
+
+            if (Request.QueryString.ToString() == "delete_confirm")
+            {
+                ADDevice.DeleteTree();
+                Response.Redirect("/ManageDevices", true);
+                return;
+            }
+
+
             string desc = ADDevice.Properties["description"].Value?.ToString();
             if (inputDesc.Text == "")
             {
